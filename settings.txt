@@ -1,0 +1,4 @@
+# You will need to restart the tracker once data changed. Previews can be "BLOCS" or "ICONS".
+STRUCTURES_SHOWN=18
+OVERLAY_BACKGROUND=#00ff00
+PREVIEWS=BLOCS
