@@ -1,4 +1,6 @@
-# You will need to restart the tracker once data changed. Previews can be "BLOCS" or "ICONS".
+# You will need to restart the tracker once data changed. Previews can be "BLOCS" or "ICONS". Scrolling speed is px per loop.
 STRUCTURES_SHOWN=18
+CLICKED_BUTTONS=#00ff00
 OVERLAY_BACKGROUND=#00ff00
 PREVIEWS=BLOCS
+SCROLLING_SPEED=0.1
