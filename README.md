@@ -18,6 +18,29 @@ Once done, don't forget to apply a color key filer on the source.
 
 ![filter](https://user-images.githubusercontent.com/93857989/206451940-3525e4a3-1b25-41fd-8a55-bb9c0e7f8e66.png)
 
+## Twitch extension
+
+You can use a Twitch extension to let yours Twitch mods switch the structures for you. All you have to do is fill the required informations in the `settings.txt`. To switch a structure use the command `!switch <structure>`. Here are all the structures names:
+- bastion_remnant
+- burried_treasure
+- desert_pyramid
+- end_city
+- igloo
+- jungle_temple
+- mineshaft
+- nether_fortress
+- nether_fossil
+- ocean_monument
+- ocean_ruins
+- pillager_outpost
+- ruined_portal
+- shipwreck
+- stronghold
+- swamp_hut
+- village
+- woodland_mansion
+You can also clear all the structures with only one command : `!clear`.
+
 ## Settings
 
 The tracker also comes with some settings, here they are:
