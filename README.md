@@ -39,6 +39,7 @@ You can use a Twitch extension to let yours Twitch mods switch the structures fo
 - swamp_hut
 - village
 - woodland_mansion
+
 You can also clear all the structures with only one command : `!clear`.
 
 ## Settings
