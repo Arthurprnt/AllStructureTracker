@@ -11,8 +11,11 @@ The **All Structures Tracker** is a tool to track your [All Structures](https://
 ## Overlay
 
 The tracker comes with an overlay for those who stream. To add it on OBS just add a window capture.
+
 ![windowcapture](https://user-images.githubusercontent.com/93857989/206451574-1116e001-5574-4e70-8c7d-c9e0801b0f4d.png)
+
 Once done, don't forget to apply a color key filer on the source.
+
 ![filter](https://user-images.githubusercontent.com/93857989/206451940-3525e4a3-1b25-41fd-8a55-bb9c0e7f8e66.png)
 
 ## Settings
