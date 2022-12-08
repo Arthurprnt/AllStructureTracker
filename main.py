@@ -32,12 +32,12 @@ class Bot(commands.Bot):
             structure = ctx.message.content.split(" ")[1]
             if structure in add_n_sup_functions.keys():
                 add_n_sup_functions[structure]()
-                await ctx.send(f"The structure has been checked by {ctx.author.name}.")
-                print(f"The structure has been checked by {ctx.author.name}.")
+                await ctx.send(f"The structure has been switch by {ctx.author.name}.")
+                print(f"The structure has been switch by {ctx.author.name}.")
             else:
                 await ctx.send(f"@{ctx.author.name}, this structure don't exist.")
         else:
-            await ctx.send(f"You can't check a structure as you're not mod.")
+            await ctx.send(f"You can't switch a structure as you're not mod.")
 
     @commands.command()
     async def clear(self, ctx: commands.Context):
@@ -57,6 +57,8 @@ window_buttons.iconbitmap("assets/icon.ico")
 window_buttons.geometry(str(size[0]) + "x" + str(size[1]))
 window_buttons.minsize(size[0], size[1])
 window_buttons.maxsize(size[0], size[1])
+if str(env["ALWAYS_ON_TOP"]) == "True":
+    window_buttons.attributes('-topmost', True)
 
 font = ("Arial, 15")
 if str(env["DARK_MODE"]) == "True":

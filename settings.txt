@@ -1,6 +1,7 @@
 # You will need to restart the tracker once data changed.
 # Previews can be "BLOCS" or "ICONS".
 # Scrolling speed is px per loop.
+ALWAYS_ON_TOP=False
 CLICKED_BUTTONS=#51b051
 DARK_MODE=True
 OVERLAY_BACKGROUND=#00ff00
