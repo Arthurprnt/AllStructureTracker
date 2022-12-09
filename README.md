@@ -2,6 +2,15 @@
 
 The **All Structures Tracker** is a tool to track your [All Structures](https://speedrun.com/mc_juice#All_Structures) runs.
 
+## Chapters
+
+<p>
+  • <a href="#installation">Installation</a></br>
+  • <a href="#overlay">Overlay</a></br>
+  • <a href="#twitch-extension">Twitch extension</a></br>
+  • <a href="#settings">Settings</a></br>
+</p>
+
 ## Installation
 
 - Go to the [releases](https://github.com/Arthurprnt/AllStructuresTracker/releases) page and download the latest version of the tracker.
