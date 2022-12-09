@@ -4,6 +4,7 @@ import os
 import threading
 from twitchio.ext import commands
 import subprocess
+import keyboard
 
 env = {}
 file = open("settings.txt", mode="r")
@@ -51,16 +52,20 @@ class Bot(commands.Bot):
 bot = Bot()
 
 window_buttons = Tk()
-size = (393, 400)
+sizes = {
+    "1": ((224, 250), "8"),
+    "2": ((325, 300), "11"),
+    "3": ((393, 400), "15")
+}
 window_buttons.title("All Structures Tracker by DraquoDrass")
 window_buttons.iconbitmap("assets/icon.ico")
-window_buttons.geometry(str(size[0]) + "x" + str(size[1]))
-window_buttons.minsize(size[0], size[1])
-window_buttons.maxsize(size[0], size[1])
+window_buttons.geometry(str(sizes[str(env["BUTTONS_WINDOW_SIZE"])][0][0]) + "x" + str(sizes[str(env["BUTTONS_WINDOW_SIZE"])][0][1]))
+window_buttons.minsize(str(sizes[str(env["BUTTONS_WINDOW_SIZE"])][0][0]), str(sizes[str(env["BUTTONS_WINDOW_SIZE"])][0][1]))
+window_buttons.maxsize(str(sizes[str(env["BUTTONS_WINDOW_SIZE"])][0][0]), str(sizes[str(env["BUTTONS_WINDOW_SIZE"])][0][1]))
 if str(env["ALWAYS_ON_TOP"]) == "True":
     window_buttons.attributes('-topmost', True)
 
-font = ("Arial, 15")
+font = (f"Arial, {str(sizes[str(env['BUTTONS_WINDOW_SIZE'])][1])}")
 if str(env["DARK_MODE"]) == "True":
     bg = "#32393d"
     fg = "#ffffff"
@@ -85,144 +90,162 @@ structures_copy = list(structures)
 def buttons_function():
     def bastion_remnant():
         if "bastion_remnant.png" in structures_copy:
-            button_bastion_remnant.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("bastion_remnant.png"))
+            while "bastion_remnant.png" in structures_copy:
+                button_bastion_remnant.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("bastion_remnant.png"))
         else:
             button_bastion_remnant.configure(bg=bg, fg=fg)
             structures_copy.append("bastion_remnant.png")
 
     def burried_treasure():
         if "burried_treasure.png" in structures_copy:
-            button_burried_treasure.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("burried_treasure.png"))
+            while "burried_treasure.png" in structures_copy:
+                button_burried_treasure.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("burried_treasure.png"))
         else:
             button_burried_treasure.configure(bg=bg, fg=fg)
             structures_copy.append("burried_treasure.png")
 
     def desert_pyramid():
         if "desert_pyramid.png" in structures_copy:
-            button_desert_pyramid.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("desert_pyramid.png"))
+            while "desert_pyramid.png" in structures_copy:
+                button_desert_pyramid.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("desert_pyramid.png"))
         else:
             button_desert_pyramid.configure(bg=bg, fg=fg)
             structures_copy.append("desert_pyramid.png")
 
     def end_city():
         if "end_city.png" in structures_copy:
-            button_end_city.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("end_city.png"))
+            while "end_city.png" in structures_copy:
+                button_end_city.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("end_city.png"))
         else:
             button_end_city.configure(bg=bg, fg=fg)
             structures_copy.append("end_city.png")
 
     def igloo():
         if "igloo.png" in structures_copy:
-            button_igloo.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("igloo.png"))
+            while "igloo.png" in structures_copy:
+                button_igloo.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("igloo.png"))
         else:
             button_igloo.configure(bg=bg, fg=fg)
             structures_copy.append("igloo.png")
 
     def jungle_temple():
         if "jungle_temple.png" in structures_copy:
-            button_jungle_temple.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("jungle_temple.png"))
+            while "jungle_temple.png" in structures_copy:
+                button_jungle_temple.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("jungle_temple.png"))
         else:
             button_jungle_temple.configure(bg=bg, fg=fg)
             structures_copy.append("jungle_temple.png")
 
     def mineshaft():
         if "mineshaft.png" in structures_copy:
-            button_mineshaft.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("mineshaft.png"))
+            while "mineshaft.png" in structures_copy:
+                button_mineshaft.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("mineshaft.png"))
         else:
             button_mineshaft.configure(bg=bg, fg=fg)
             structures_copy.append("mineshaft.png")
 
     def nether_fortress():
         if "nether_fortress.png" in structures_copy:
-            button_nether_fortress.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("nether_fortress.png"))
+            while "nether_fortress.png" in structures_copy:
+                button_nether_fortress.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("nether_fortress.png"))
         else:
             button_nether_fortress.configure(bg=bg, fg=fg)
             structures_copy.append("nether_fortress.png")
 
     def nether_fossil():
         if "nether_fossil.png" in structures_copy:
-            button_nether_fossil.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("nether_fossil.png"))
+            while "nether_fossil.png" in structures_copy:
+                button_nether_fossil.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("nether_fossil.png"))
         else:
             button_nether_fossil.configure(bg=bg, fg=fg)
             structures_copy.append("nether_fossil.png")
 
     def ocean_monument():
         if "ocean_monument.png" in structures_copy:
-            button_ocean_monument.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("ocean_monument.png"))
+            while "ocean_monument.png" in structures_copy:
+                button_ocean_monument.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("ocean_monument.png"))
         else:
             button_ocean_monument.configure(bg=bg, fg=fg)
             structures_copy.append("ocean_monument.png")
 
     def ocean_ruins():
         if "ocean_ruins.png" in structures_copy:
-            button_ocean_ruins.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("ocean_ruins.png"))
+            while "ocean_ruins.png" in structures_copy:
+                button_ocean_ruins.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("ocean_ruins.png"))
         else:
             button_ocean_ruins.configure(bg=bg, fg=fg)
             structures_copy.append("ocean_ruins.png")
 
     def pillager_outpost():
         if "pillager_outpost.png" in structures_copy:
-            button_pillager_outpost.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("pillager_outpost.png"))
+            while "pillager_outpost.png" in structures_copy:
+                button_pillager_outpost.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("pillager_outpost.png"))
         else:
             button_pillager_outpost.configure(bg=bg, fg=fg)
             structures_copy.append("pillager_outpost.png")
 
     def ruined_portal():
         if "ruined_portal.png" in structures_copy:
-            button_ruined_portal.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("ruined_portal.png"))
+            while "ruined_portal.png" in structures_copy:
+                button_ruined_portal.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("ruined_portal.png"))
         else:
             button_ruined_portal.configure(bg=bg, fg=fg)
             structures_copy.append("ruined_portal.png")
 
     def shipwreck():
         if "shipwreck.png" in structures_copy:
-            button_shipwreck.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("shipwreck.png"))
+            while "shipwreck.png" in structures_copy:
+                button_shipwreck.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("shipwreck.png"))
         else:
             button_shipwreck.configure(bg=bg, fg=fg)
             structures_copy.append("shipwreck.png")
 
     def stronghold():
         if "stronghold.png" in structures_copy:
-            button_stronghold.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("stronghold.png"))
+            while "stronghold.png" in structures_copy:
+                button_stronghold.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("stronghold.png"))
         else:
             button_stronghold.configure(bg=bg, fg=fg)
             structures_copy.append("stronghold.png")
 
     def swamp_hut():
         if "swamp_hut.png" in structures_copy:
-            button_swamp_hut.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("swamp_hut.png"))
+            while "swamp_hut.png" in structures_copy:
+                button_swamp_hut.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("swamp_hut.png"))
         else:
             button_swamp_hut.configure(bg=bg, fg=fg)
             structures_copy.append("swamp_hut.png")
 
     def village():
         if "village.png" in structures_copy:
-            button_village.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("village.png"))
+            while "village.png" in structures_copy:
+                button_village.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("village.png"))
         else:
             button_village.configure(bg=bg, fg=fg)
             structures_copy.append("village.png")
 
     def wooden_mansion():
         if "wooden_mansion.png" in structures_copy:
-            button_wooden_mansion.configure(bg=changed_bg, fg=fg)
-            structures_copy.pop(structures_copy.index("wooden_mansion.png"))
+            while "wooden_mansion.png" in structures_copy:
+                button_wooden_mansion.configure(bg=changed_bg, fg=fg)
+                structures_copy.pop(structures_copy.index("wooden_mansion.png"))
         else:
             button_wooden_mansion.configure(bg=bg, fg=fg)
             structures_copy.append("wooden_mansion.png")
@@ -246,7 +269,7 @@ def buttons_function():
         button_swamp_hut.configure(bg=bg, fg=fg)
         button_village.configure(bg=bg, fg=fg)
         button_wooden_mansion.configure(bg=bg, fg=fg)
-        for i in range(0, len(structures_copy) - 1):
+        while structures_copy != []:
             structures_copy.pop()
         for i in structures:
             structures_copy.append(i)
@@ -396,6 +419,9 @@ def overlay_function():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 opened = False
+
+        if keyboard.is_pressed(str(env["RESET_KEY"])):
+            add_n_sup_functions["clear"]()
 
         pygame.display.flip()
 
