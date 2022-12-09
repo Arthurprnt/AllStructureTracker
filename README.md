@@ -56,10 +56,12 @@ You can also clear all the structures with only one command : `!clear`.
 The tracker also comes with some settings, here they are:
 
 - `ALWAYS_ON_TOP`: Allow you to choose if you want the tracker to be always on top or not.
+- `BUTTONS_WINDOW_SIZE`: Change the size of the window with all the buttons (can be 1, 2 or 3).
 - `CLICKED_BUTTONS`: Change the color of the button when the structure is checked.
 - `DARK_MODE`: Allow you to choose if you want to use the dark mode (True for yes and False for no).
 - `OVERLAY_BACKGROUND`: Change the background color of the overlay.
 - `PREVIEWS`: Change the icons set that will be displayed on the overlay (ICONS or BLOCS).
+- `RESET_KEY`: The key you use to reset a seed in game.
 - `SCROLLING_SPEED`: Change the scrolling speed of the icons on the overlay (can't be negative).
 - `STRUCTURES_SHOWN`: Change the number of structures displayed on the overlay.
 - `TWITCH_TOKEN`: Must be filled if you use the Twitch extension. The token can be find [here](https://twitchapps.com/tmi/) (you must be connected to the account you use to stream).
