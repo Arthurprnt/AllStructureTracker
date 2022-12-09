@@ -2,6 +2,15 @@
 
 The **All Structures Tracker** is a tool to track your [All Structures](https://speedrun.com/mc_juice#All_Structures) runs.
 
+## Chapters
+
+<p>
+  • <a href="#installation">Installation</a></br>
+  • <a href="#overlay">Overlay</a></br>
+  • <a href="#twitch-extension">Twitch extension</a></br>
+  • <a href="#settings">Settings</a></br>
+</p>
+
 ## Installation
 
 - Go to the [releases](https://github.com/Arthurprnt/AllStructuresTracker/releases) page and download the latest version of the tracker.
@@ -46,6 +55,7 @@ You can also clear all the structures with only one command : `!clear`.
 
 The tracker also comes with some settings, here they are:
 
+- `ALWAYS_ON_TOP`: Allow you to choose if you want the tracker to be always on top or not.
 - `CLICKED_BUTTONS`: Change the color of the button when the structure is checked.
 - `DARK_MODE`: Allow you to choose if you want to use the dark mode (True for yes and False for no).
 - `OVERLAY_BACKGROUND`: Change the background color of the overlay.
