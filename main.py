@@ -5,6 +5,7 @@ import threading
 from twitchio.ext import commands
 import subprocess
 import keyboard
+import ctypes
 
 env = {}
 file = open("settings.txt", mode="r")
@@ -434,14 +435,26 @@ def twitch_function():
     else:
         pass
 
-if __name__ == "__main__":
-    thread3 = threading.Thread(target=twitch_function, args=())
-    thread2 = threading.Thread(target=buttons_function, args=())
-    thread = threading.Thread(target=overlay_function, args=())
-    thread3.start()
-    thread.start()
-    thread2.start()
-
-
+def tkinter_function():
     window_buttons.mainloop()
     opened = False
+
+if __name__ == "__main__":
+    thread_twitch = threading.Thread(target=twitch_function, args=())
+    thread_btns = threading.Thread(target=buttons_function, args=())
+    thread_overlay = threading.Thread(target=overlay_function, args=())
+    thread_tkinter = threading.Thread(target=tkinter_function, args=())
+
+    thread_twitch.start()
+    thread_overlay.start()
+    thread_btns.start()
+    thread_tkinter.start()
+
+    thread_overlay.join()
+
+    ids_to_kill = [thread_twitch.get_native_id(), thread_btns.get_native_id(), thread_tkinter.get_native_id()]
+    for id_to_kill in ids_to_kill:
+        res = ctypes.pythonapi.PyThreadState_SetAsyncExc(id_to_kill, ctypes.py_object(SystemExit))
+        if res > 1:
+            ctypes.pythonapi.PyThreadState_SetAsyncExc(id_to_kill, 0)
+            print("Exception raise failure")
